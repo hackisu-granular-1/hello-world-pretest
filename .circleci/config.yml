@@ -15,3 +15,11 @@ workflows:
     jobs:
       - aws-cli-create-bucket:
           context: AWS
+      - aws-serverless/deploy:
+          requires:
+            - aws-cli-create-bucket
+          context: AWS
+          name: deploy-production
+          stack-name: hackathon-lambda-1
+          template: ./hello-world-pretest/template.yaml
+          s3-bucket: travis-reed-hackisu-lambda-pre-code
