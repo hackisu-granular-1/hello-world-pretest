@@ -9,7 +9,7 @@ jobs:
       - checkout
       - aws-cli/setup:
           profile-name: default
-      - run: aws s3 mb s3://travis-reed-hackisu-lambda-2-code
+      - run: aws s3 mb s3://travis-reed-hackisu-lambda-pre-code
 workflows:
   deploy:
     jobs:
